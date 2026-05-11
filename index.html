@@ -35,9 +35,16 @@
       </a-plane>
       <!El atributo de hide permite que se oculte la entidad en modo realidad virtual
       <a-sky hide-on-enter-ar src="#fondo"></a-sky>
-      <!--A frame introduce una cámara por defecto a no ser que incluyamos esta. La camara por defecto tiene el atributo position
+      <!--Ponemos una entidad vacía para usar herencia y que los elementos de esta entidad 
+      tengan todos los mismos valores-->
+      <a-entity position="5 1.6 0" rotation="0 0 0">
+        <!--A frame introduce una cámara por defecto a no ser que incluyamos esta. La camara por defecto tiene el atributo position
       0 1.6 0, esto es, a la altura de los ojos-->
-      <a-camera wasd-controls="acceleration: 100; fly: true"  look-controls postition="5 1.6 0"></a-camera>
+        <a-camera wasd-controls="acceleration: 100; fly: true"  look-controls></a-camera>
+        <!--Estas entidades me permiten activar los mandos de la oculus-->
+        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        <a-entity oculus-touch-controls="hand: left"></a-entity>
+      </a-entity>
     </a-scene>
   </body>
 </html>
