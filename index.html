@@ -37,7 +37,7 @@
       <a-sky hide-on-enter-ar src="#fondo"></a-sky>
       <!--Ponemos una entidad vacía para usar herencia y que los elementos de esta entidad 
       tengan todos los mismos valores-->
-      <a-entity position="5 1.6 0" rotation="0 0 0">
+      <a-entity movement-controls="fly: true" position="5 1.6 0" rotation="0 0 0">
         <!--A frame introduce una cámara por defecto a no ser que incluyamos esta. La camara por defecto tiene el atributo position
       0 1.6 0, esto es, a la altura de los ojos-->
         <a-camera wasd-controls="acceleration: 100; fly: true"  look-controls></a-camera>
