@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <!-- biblioteca es necesario para implementar componentes extras como la del movimiento con 
+     controladores-->
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.7.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    
+    <a-scene xr-mode-ui="XRMode: xr">
+      <a-assets>
+        <img id="textura_sol" src="sol.jpg">
+        <img id="universo" src="universo.jpeg">
+      </a-assets>
+     
+     <a-sphere position="0 0 0" radius="5" src="#textura_sol">
+        <a-sphera position="-2 0 0" radius="1" color="gray"></a-sphera>
+     </a-sphere>
+
+      
+      <a-sky hide-on-enter-ar src="#universo"></a-sky>
+      
+      <a-entity movement-controls="fly: true" position="5 1.6 0" rotation="0 0 0">
+        <!--A frame introduce una cámara por defecto a no ser que incluyamos esta. La camara por defecto tiene el atributo position
+      0 1.6 0, esto es, a la altura de los ojos-->
+        <a-camera wasd-controls="acceleration: 100; fly: true"  look-controls></a-camera>
+        <!--Estas entidades me permiten activar los mandos de la oculus-->
+        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        <a-entity oculus-touch-controls="hand: left"></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
