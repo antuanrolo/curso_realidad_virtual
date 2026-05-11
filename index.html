@@ -3,7 +3,10 @@
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <!--El atributo xr mode en a-scene permite visualizar la escena en realidad aumentada
+    Por defecto estamos en realidad virtual(vr). Si se pone ar solo pone el botón ar en las gafas
+    En xr pñodría pasar de vr a ar-->
+    <a-scene xr-mode-ui="XRMode: xr">
       <a-assets>
         <img id="textura" src="cesped.jpg">
         <img id="fondo" src="imagen360.jpg">
@@ -30,7 +33,8 @@
       <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4" src="#textura">
 
       </a-plane>
-      <a-sky src="#fondo"></a-sky>
+      <!El atributo de hide permite que se oculte la entidad en modo realidad virtual
+      <a-sky hide-on-enter-ar src="#fondo"></a-sky>
     </a-scene>
   </body>
 </html>
