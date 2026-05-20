@@ -32,12 +32,25 @@
       <a-box position="2 2 -3" rotation="90 0 0" height="5" width="1" depth="1" color="#4CC3D9" geometry="depth: 4; height: 6"></a-box>
       <a-box position="0 0.25 -3" rotation="0 0 90" height="5" width="1" depth="1" color="#4CC3D9" geometry="depth: 6; height: 4; width: 0.5"></a-box>
       <a-box position="2 2 -3" height="5" width="1" depth="1" color="#4CC3D9" geometry="depth: 6; height: 4"></a-box>
-      
       <!--
       <a-box position="-1 3 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-box position="-1 3 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
     -->
-
+      <!-- la luz es fundamental en un montaje de 3D. EL tipo direccional requiere de posicionamiento
+       La intensidad va de 0 a 1, aunque se pueden dar valores superiores a 1. Es la de tipo sol
+       que emite rayos.
+       La luz de tipo ambiental se ejectura para toda la escena. NO  requiere de posicionamiento
+       La luz de tipo point es la que simula una bombilla
+       Por último, la luz de tipo cono, spot, es la uque simula caída de luz-->
+      <a-light  type="directional" color="ffaa33" intensity="1" position="-5 1 0 "></a-light>
+      <a-light  type="ambient" color="ffffbb" intensity="0.5" ></a-light>
+      <a-sphere color="yellow" position="0 2 0" radius="0.5">
+        <a-light type="point" intensity="0.5" color="ffffff"></a-light>
+      </a-sphere>
+      <a-box color="red" position="0 -2 0">
+        <a-light type="spot" intensity="0.5" color="ffffff"></a-light>
+      </a-box>
+    
       <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4" src="#textura">
 
       </a-plane>
@@ -53,20 +66,6 @@
         <a-entity oculus-touch-controls="hand: right"></a-entity>
         <a-entity oculus-touch-controls="hand: left"></a-entity>
       </a-entity>
-      <!-- la luz es fundamental en un montaje de 3D. EL tipo direccional requiere de posicionamiento
-       La intensidad va de 0 a 1, aunque se pueden dar valores superiores a 1. Es la de tipo sol
-       que emite rayos.
-       La luz de tipo ambiental se ejectura para toda la escena. NO  requiere de posicionamiento
-       La luz de tipo point es la que simula una bombilla
-       Por último, la luz de tipo cono, spot, es la uque simula caída de luz-->
-      <a-light  type="directional" color="ffaa33" intensity="1" position="-5 1 0 "></a-light>
-      <a-light  type="ambient" color="ffffbb" intensity="0.5" ></a-light>
-      <a-sphere color="yellow" position="0 2 0" radius="0.5">
-        <a-light type="point" intensity="0.5" color="ffffff"></a-light>
-      </a-sphere>
-      <a-box color="red" position="0 -2 0">
-        <a-light type="spot" intensity="0.5" color="ffffff"></a-light>
-      </a-box>
-    </a-scene>
+    </a-scene>  
   </body>
 </html>
