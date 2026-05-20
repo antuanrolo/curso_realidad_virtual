@@ -23,14 +23,15 @@
         <video id="miVideo" src="videoPajaro.mp4" autoplay loop muted></video>
       </a-assets>
       
+      <a-entity environment="preset: egypt"></a-entity>
+
       <!--La etiqueta a-video genera un plano, luego es para archivos 2d. Para 3d es necesario
       usar la etiqueta avideosphere. En este caso, el vídeo se coloca como el cielo, por lo que hay
       que quitar enviroment y sky si lo hubiera -->
       <a-video src="#miVideo" width="4" height="2.25" position="0 2 0"></a-video>
       <a-videosphere src="#miVideo" width="4" height="2.25" position="0 2 0"></a-video>
       
-      
-      <a-entity environment="preset: egypt"></a-entity>
+           
       <!--Este es el proyecto anterior
       <a-box position="-1 3 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-box position="2 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
@@ -62,8 +63,8 @@
       <a-box color="red" position="-3 4 0" sound="src:pajarito.mp3;
       on:click; position:true">
         <a-light type="spot" intensity="0.75" color="ffffff"></a-light>
-
       </a-box>
+
       <!--Para el tema del audio no es necesario poner el archivo en assets. Con el atributo
       src indicando su ruta respecto a este archivo, es suficiente.
       Por defecto el autoplay está a false. Se pueden añadir los atributos de volume y loop. 
@@ -73,12 +74,13 @@
       <a-sound src="pajarito.mp3" autoplay="false" on="click"></a-sound>
     
       <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4" src="#textura">
-
       </a-plane>
+      
       <!--El atributo de hide permite que se oculte la entidad en modo realidad virtual-->
       <a-sky hide-on-enter-ar src="#fondo"></a-sky>
       <!--Ponemos una entidad vacía para usar herencia y que los elementos de esta entidad 
       tengan todos los mismos valores-->
+      
       <a-entity movement-controls="fly: true" position="5 1.6 0" rotation="0 0 0">
         <!--A frame introduce una cámara por defecto a no ser que incluyamos esta. La camara por defecto tiene el atributo position
       0 1.6 0, esto es, a la altura de los ojos-->
@@ -86,8 +88,8 @@
         <!--Estas entidades me permiten activar los mandos de la oculus-->
         <a-entity oculus-touch-controls="hand: right"></a-entity>
         <a-entity oculus-touch-controls="hand: left"></a-entity>
-        <a-ent
       </a-entity>
+      
     </a-scene>  
   </body>
 </html>
