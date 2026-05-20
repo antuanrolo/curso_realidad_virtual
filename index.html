@@ -52,10 +52,19 @@
         <a-entity oculus-touch-controls="hand: left"></a-entity>
       </a-entity>
       <!-- la luz es fundamental en un montaje de 3D. EL tipo direccional requiere de posicionamiento
-       La intensidad va de 0 a 1, aunque se pueden dar valores superiores a 1
-       La luz de tipo ambiental se ejectura para toda la escena. NO  requiere de posicionamiento-->
+       La intensidad va de 0 a 1, aunque se pueden dar valores superiores a 1. Es la de tipo sol
+       que emite rayos.
+       La luz de tipo ambiental se ejectura para toda la escena. NO  requiere de posicionamiento
+       La luz de tipo point es la que simula una bombilla
+       Por último, la luz de tipo cono, spot, es la uque simula caída de luz-->
       <a-light  type="directional" color="ffaa33" intensity="1" position="-5 1 0 "></a-light>
       <a-light  type="ambient" color="ffffbb" intensity="0.5" ></a-light>
+      <a-sphere color="yellow" position="0 2 0" radius="0.5">
+        <a-light type="point" intensity="0.5" color="ffffff"></a-light>
+      </a-sphere>
+      <a-sbox color="red" position="0 -2 0" r>
+        <a-light type="spot" intensity="0.5" color="ffffff"></a-light>
+      </a-sphere>
     </a-scene>
   </body>
 </html>
